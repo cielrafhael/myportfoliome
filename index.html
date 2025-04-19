@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPortfolio - Imam</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0d0d0d;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: black;
+        z-index: 1000;
+        animation: slideDown 1s ease-in-out;
+        flex-wrap: wrap;
+      }
+
+      .navbar div {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 8px 10px;
+        transition: color 0.3s;
+        font-size: 16px;
+      }
+
+      .navbar a:hover {
+        color: #00ffff;
+      }
+
+      /* Section style */
+      section {
+        padding: 100px 20px 60px;
+        max-width: 1200px;
+        margin: auto;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1s forwards;
+        text-align: center;
+      }
+
+      section:nth-child(odd) {
+        animation-delay: 0.2s;
+      }
+
+      section:nth-child(even) {
+        animation-delay: 0.4s;
+      }
+
+      /* HOME */
+      #home .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: white;
+        box-shadow: 0 0 10px #00000033;
+        transition: transform 0.4s;
+        flex-shrink: 0;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        animation: pulse 2s infinite alternate;
+      }
+
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      p {
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      /* PROJEK */
+      #projek .grid {
+        column-count: 3;
+        column-gap: 15px;
+      }
+
+      .grid-item {
+        display: inline-block;
+        margin: 0 0 15px;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .grid-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 16px #00000033;
+      }
+
+      .grid-item img {
+        width: 100%;
+        display: block;
+        border-radius: 5px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: black;
+        color: white;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          text-shadow: 0 0 10px #000000, 0 0 20px #000000;
+        }
+        100% {
+          text-shadow: 0 0 5px #000000, 0 0 10px #000000;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        #projek .grid {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar a {
+          margin: 5px 0;
+        }
+
+        #home .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile-img {
+          margin-bottom: 20px;
+        }
+
+        #projek .grid {
+          column-count: 1;
+        }
+
+        h1,
+        h2 {
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div>MyPortfolio</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#projek">Projek</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home">
+      <div class="container">
+        <img class="profile-img" src="gambar/0000.jpg" alt="Foto Profil" />
+        <div>
+          <h1>Hello saya Imam.</h1>
+          <h2>Saya adalah seorang ilustrator dan desainer</h2>
+          <p>
+            yang berfokus pada menciptakan karya visual yang unik dan penuh karakter. Dengan perpaduan kreativitas dan detail, saya menghadirkan desain yang tidak hanya estetis tetapi juga komunikatif. Dari ilustrasi digital hingga desain
+            grafis, saya selalu berusaha memberikan hasil yang menginspirasi dan berkesan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang">
+      <h1>Tentang Saya</h1>
+      <p>
+        Saya adalah desainer visual yang berdedikasi, dengan keahlian dalam ilustrasi, desain grafis, dan branding. Setiap karya saya lahir dari ide dan konsep yang kuat, dan selalu berusaha untuk menyampaikan pesan yang mendalam dan
+        berdampak visual.
+      </p>
+    </section>
+
+    <!-- Projek -->
+    <section id="projek">
+      <h1>Galeri Projek</h1>
+      <div class="grid">
+        <div class="grid-item"><img src="gambar/1.jpg" alt="Gambar 1" /></div>
+        <div class="grid-item"><img src="gambar/2.jpg" alt="Gambar 2" /></div>
+        <div class="grid-item"><img src="gambar/3.jpg" alt="Gambar 3" /></div>
+        <div class="grid-item"><img src="gambar/4.jpg" alt="Gambar 4" /></div>
+        <div class="grid-item"><img src="gambar/metal2.jpg" alt="Gambar 5" /></div>
+        <div class="grid-item"><img src="gambar/5.jpg" alt="Gambar 6" /></div>
+        <div class="grid-item"><img src="gambar/6.jpg" alt="Gambar 7" /></div>
+        <div class="grid-item"><img src="gambar/7.jpg" alt="Gambar 8" /></div>
+        <div class="grid-item"><img src="gambar/8.jpg" alt="Gambar 9" /></div>
+        <div class="grid-item"><img src="gambar/9.jpg" alt="Gambar 10" /></div>
+        <div class="grid-item"><img src="gambar/10.jpg" alt="Gambar 11" /></div>
+        <div class="grid-item"><img src="gambar/11.jpg" alt="Gambar 12" /></div>
+        <div class="grid-item"><img src="gambar/12.jpg" alt="Gambar 13" /></div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+      <h1>Kontak</h1>
+      <p>📩 Email: <a href="mailto:mydesain13@gmail.com" style="color: #00ffff">mydesain13@gmail.com</a></p>
+      <p>🌐 Website: <a href="#" style="color: #00ffff">mydesain13.my.id</a></p>
+      <p>📱 WhatsApp/Telepon: <a href="#" style="color: #00ffff">+62 812 3456 7890</a></p>
+      <p>📷 Instagram / Behance / Dribbble: <a href="#" style="color: #00ffff">@mydesain13</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">copyright by mesym</footer>
+  </body>
+</html>
